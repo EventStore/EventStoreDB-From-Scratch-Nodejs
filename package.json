@@ -1,0 +1,14 @@
+{
+ "name": "developers_class_rough_draft",
+ "version": "1.0.0",
+ "main": "index.js",
+ "type": "module",
+ "author": "Tom Hanlon",
+ "license": "MIT",
+ "scripts": {
+  "start": "node index.js"
+ },
+ "dependencies": {
+  "@eventstore/db-client": "^6.1.0"
+ }
+}
