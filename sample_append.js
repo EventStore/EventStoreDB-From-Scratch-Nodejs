@@ -28,7 +28,7 @@ console.log("************************");
 console.log("🎉 Congratulations, you have written an event!");
 console.log("Stream: " + eventStream);
 console.log("Event Type: " + eventType);
-console.log("Event Body: {\"id\":\"1\",\"importantData\":\"some value\"}");
+console.log("Event Body: " + JSON.stringify(event.data));
 console.log("************************");
 
 client.dispose();
