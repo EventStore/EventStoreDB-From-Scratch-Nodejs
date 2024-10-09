@@ -17,7 +17,7 @@ const eventType = "SampleEventType"
 const event = jsonEvent({
   type: eventType,
   data: {
-    "id":"100", "data":"some data"
+    "id":"100", "importantData":"some value"
   },
 });
 
@@ -32,4 +32,3 @@ console.log("Event Body: {\"id\":\"1\",\"importantData\":\"some value\"}");
 console.log("************************");
 
 client.dispose();
-
