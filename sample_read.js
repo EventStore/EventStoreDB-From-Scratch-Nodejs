@@ -1,25 +1,28 @@
 import { BACKWARDS, EventStoreDBClient, FORWARDS, START } from "@eventstore/db-client";
-import { jsonEvent } from '@eventstore/db-client';
 
 const client = EventStoreDBClient.connectionString("esdb://localhost:2113?tls=false");
 
-// 
-// Our application will be logging a stream 
-// of badged door accesses to our buildings
-// We will set building_id to 1 in this case
-
-const stream_name = "SampleContent";
-
+// Read events from the SampleStream
+const stream_name = "SampleStream";
 let events = client.readStream(
-    stream_name,
-    {
-      fromRevision: START,
-      direction: FORWARDS,
-      maxCount: 20
-    }
-  );
-
-  for await (const resolvedEvent of events) {
-    console.log(resolvedEvent.event?.data);
+  stream_name,
+  {
+    fromRevision: START,
+    direction: FORWARDS,
+    maxCount: 20
   }
-  client.dispose();
+);
+
+// For each event found in SampleStream
+for await (const resolvedEvent of events) {
+
+  // print the string to console output                
+  console.log("************************");
+  console.log("You have read an event!");
+  console.log("Stream: " + resolvedEvent.event?.streamId);
+  console.log("Event Type: " + resolvedEvent.event?.type);
+  console.log("Event Body: " + JSON.stringify(resolvedEvent.event?.data));
+  console.log("************************");
+
+}
+client.dispose();
