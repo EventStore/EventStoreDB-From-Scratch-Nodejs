@@ -4,15 +4,11 @@
 	"name": "from-scratch",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:18",
-	"features": {
+	"features": {		
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
 			"enableNonRootDocker": "true",
 			"moby": "true"
-		},
-		"ghcr.io/devcontainers/features/java:1": {
-			"version": "17", // Hardcoded to 17 due to bug: https://github.com/devcontainers/features/issues/1134
-			"installMaven": "true"
 		}
 	},
 	"portsAttributes": {
