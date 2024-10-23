@@ -25,11 +25,11 @@ const client = EventStoreDBClient.connectionString("esdb://localhost:2113?tls=fa
 // open up the stream browser and view the "SampleStream" stream
 // You should see some content there
 
-const eventType = "SampleEventType"            // Define the event type for the new event     
-const event = jsonEvent({                      // Create a new event with a type and body           
-  type: eventType,                             // Specify the event type             
-  data: {                                      //                
-    "id":"100", "importantData":"some value"   // Specify the event data body                           
+const eventType = "SampleEventType"          // Define the event type for the new event     
+const event = jsonEvent({                    // Create a new event with a type and body           
+  type: eventType,                           // Specify the event type             
+  data: {                                    //                
+    "id":"1", "importantData":"some value"   // Specify the event data body                           
   },
 });
 
